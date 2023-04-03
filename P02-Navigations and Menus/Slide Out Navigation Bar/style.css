@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Merriweather+Sans:wght@700&family=Playfair+Display:wght@400;700&family=Roboto+Mono:wght@300;400;500&display=swap");
+:root {
+  --fs-main: 62.5%;
+  --fs-0: 0.5rem;
+  --fs-1: 1rem;
+  --fs-2: 1.5rem;
+  --fs-3: 2rem;
+  --fs-4: 3rem;
+
+  --ff-main: "Roboto Mono", monospace;
+  --ff-nav-1: "Merriweather Sans", sans-serif;
+  --ff-nav-2: "Josefin Sans", sans-serif;
+
+  --padding-li: 1rem;
+
+  --right-position-1: 25%;
+  --right-position-2: 80%;
+
+  --transform-translate-1: 100%;
+  --transform-translate-2: 0%;
+  --transform-translate-3: -100%;
+
+  --transform-translate-4: 75%;
+  --transform-translate-5: 20%;
+
+  --zindex-1: 9999;
+  --zindex-2: 1000;
+  --zindex-3: 10;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+li {
+  margin: 0;
+}
+
+html {
+  font-size: var(--fs-main);
+  font-family: var(--ff-main);
+  text-transform: capitalize;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a:not([class]) {
+  text-decoration: none;
+}
+
+/* --------------- ---------------- -----------------  */
+body {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  font-size: var(--fs-3);
+  /* overflow-x: hidden; */
+}
+main {
+  flex-grow: 1;
+  height: 100vh;
+
+  background: linear-gradient(#bbd2c5, #536976, #292e49);
+
+  display: grid;
+  place-content: center;
+
+  transition: transform ease-out 250ms;
+  position: relative;
+}
+
+nav {
+  width: fit-content;
+  display: none;
+  /* padding-inline: clamp(0.2rem, 5vw + 1rem, 3rem); */
+  /*position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0; */
+  /* right: var(--right-position-1); */
+  /* right: 25%; */
+
+  /* z-index: var(--zindex-3);
+ */
+  background: linear-gradient(#bbd2c5, #536976);
+  opacity: 0.8;
+
+  transform: translateX(-100%);
+  transition: transform ease-out 250ms;
+
+  height: 100vh;
+  overflow: auto;
+}
+
+.show-nav {
+  display: block;
+  transform: translateX(0%);
+}
+
+@media screen and (max-width: 500px) {
+  .navFullWidth {
+    width: 100%;
+  }
+  .hideMain {
+    display: none;
+  }
+}
+
+/* style scroll bar */
+/* --------------- scroll bar styling -----------------  */
+nav::-webkit-scrollbar {
+  width: 0.6rem; /* Set the width of the scrollbar */
+}
+
+nav::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Set the background color of the track */
+}
+
+nav::-webkit-scrollbar-thumb {
+  background-color: #536976; /* Set the background color of the thumb */
+  border-radius: 5px; /* Set the border radius of the thumb */
+}
+
+nav::-webkit-scrollbar-thumb:hover {
+  background-color: #292e49; /* Set the background color of the thumb when hovered */
+}
+/* --------------- ---------------- -----------------  */
+
+#navbarlinks {
+  list-style: none;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#navbarlinks li {
+  margin: 10px 0;
+}
+
+/* --------------- ---------------- -----------------  */
+
+button {
+  font-size: var(--fs-4);
+}
+
+nav a {
+  color: black;
+  text-transform: uppercase;
+  font-family: var(--fs-nav-2);
+  font-weight: 400;
+}
+
+main > p {
+  color: #292e49;
+  font-family: var(--ff-main);
+  text-align: center;
+}
+
+main p > span {
+  font-weight: 900;
+}
+
+nav li:hover {
+  text-align: center;
+  width: 100%;
+  border-block: 2px solid #292e49;
+}
+
+nav li:hover a {
+  color: #292e49;
+}
+
+.nav-3-menu-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  z-index: var(--zindex-1);
+}

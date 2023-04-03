@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Responsive Slide out and Hamburger Nav Bar</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-icon-180x180.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/images/favicon-16x16.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/images/favicon-96x96.png"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- nav>ul>li$*4>a>span -->
+
+    <header id="primary-header" class="primary-header flex">
+      <div>
+        <img src="/images/Logo.png" alt="logo" width="40px" height="40px" />
+      </div>
+      <button
+        class="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav>
+        <ul
+          data-visible="false"
+          id="primary-navigation"
+          class="primary-navigation flex"
+        >
+          <li>
+            <a href="#"><span aria-hidden="true">00</span>Home</a>
+          </li>
+          <li>
+            <a href="#"><span aria-hidden="true">01</span>Destination</a>
+          </li>
+          <li>
+            <a href="#"><span aria-hidden="true">02</span>Crew</a>
+          </li>
+          <li>
+            <a href="#"><span aria-hidden="true">03</span>Technology</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

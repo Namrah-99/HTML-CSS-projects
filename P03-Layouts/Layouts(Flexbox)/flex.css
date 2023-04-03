@@ -1,0 +1,893 @@
+/* ================================================================================================================== */
+/* FLEXBOX UNDERSTANDING and few layouts using Grid ( Thirteen onward layouts) */
+/* ================================================================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Roboto Mono", monospace;
+}
+body {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+}
+.flex-items1,
+.flex-items2,
+.flex-items3,
+.flex-items4,
+.flex-items5,
+.flex-items6,
+.flex-items7,
+.flex-items8,
+.flex-items9,
+.flex-items10,
+.flex-items11,
+.flex-items12,
+.flex-items13,
+.flex-items14,
+.flex-items15,
+.flex-items16,
+.flex-items17 {
+  font-size: 2rem;
+}
+.flex-item-1,
+.flex-item-11,
+.flex-item-21,
+.flex-item-31,
+.flex-item-41,
+.flex-item-51,
+.flex-item-61,
+.flex-item-71,
+.flex-item-81,
+.flex-item-91,
+.flex-item-101,
+.flex-item-111,
+.flex-item-121,
+.flex-item-131,
+.flex-item-141,
+.flex-item-151,
+.flex-item-161,
+.flex-item-171,
+.flex-item-12main13extra03,
+.flex-item-13main14extra01,
+.flex-item-14main15extra01,
+.flex-item-15main16extra01 {
+  background-color: #26a0da;
+}
+.flex-item-2,
+.flex-item-12,
+.flex-item-22,
+.flex-item-32,
+.flex-item-42,
+.flex-item-52,
+.flex-item-62,
+.flex-item-72,
+.flex-item-82,
+.flex-item-92,
+.flex-item-102,
+.flex-item-112,
+.flex-item-122,
+.flex-item-132,
+.flex-item-142,
+.flex-item-152,
+.flex-item-162,
+.flex-item-172,
+.flex-item-12main13extra04,
+.flex-item-13main14extra02,
+.flex-item-14main15extra02,
+.flex-item-15main16extra02 {
+  background-color: #f9d423;
+}
+.flex-item-3,
+.flex-item-13,
+.flex-item-23,
+.flex-item-33,
+.flex-item-43,
+.flex-item-53,
+.flex-item-63,
+.flex-item-73,
+.flex-item-83,
+.flex-item-93,
+.flex-item-103,
+.flex-item-113,
+.flex-item-123,
+.flex-item-133,
+.flex-item-143,
+.flex-item-153,
+.flex-item-163,
+.flex-item-173,
+.flex-item-12main13extra02,
+.flex-item-13main14extra03,
+.flex-item-14main15extra03,
+.flex-item-15main16extra03 {
+  background-color: #cc2b5e;
+}
+.flex-item-4,
+.flex-item-14,
+.flex-item-24,
+.flex-item-34,
+.flex-item-44,
+.flex-item-54,
+.flex-item-64,
+.flex-item-74,
+.flex-item-84,
+.flex-item-94,
+.flex-item-104,
+.flex-item-114,
+.flex-item-124,
+.flex-item-134,
+.flex-item-144,
+.flex-item-154,
+.flex-item-164,
+.flex-item-174,
+.flex-item-12main13extra05,
+.flex-item-14main15extra04,
+.flex-item-15main16extra04,
+.flex-item-16main17extra02 {
+  background-color: #a5cc82;
+}
+.flex-item-5,
+.flex-item-15,
+.flex-item-25,
+.flex-item-35,
+.flex-item-45,
+.flex-item-55,
+.flex-item-65,
+.flex-item-75,
+.flex-item-85,
+.flex-item-95,
+.flex-item-105,
+.flex-item-115,
+.flex-item-125,
+.flex-item-135,
+.flex-item-145,
+.flex-item-155,
+.flex-item-165,
+.flex-item-175,
+.flex-item-12main13extra01,
+.flex-item-14main15extra05,
+.flex-item-15main16extra05 {
+  background-color: #b79891;
+}
+.flex-item-6,
+.flex-item-16,
+.flex-item-26,
+.flex-item-36,
+.flex-item-46,
+.flex-item-56,
+.flex-item-66,
+.flex-item-76,
+.flex-item-86,
+.flex-item-96,
+.flex-item-106,
+.flex-item-116,
+.flex-item-126,
+.flex-item-136,
+.flex-item-146,
+.flex-item-156,
+.flex-item-166,
+.flex-item-176,
+.flex-item-12main13extra06,
+.flex-item-14main15extra06,
+.flex-item-15main16extra06 {
+  background-color: #86fde8;
+}
+.flex-item-7,
+.flex-item-17,
+.flex-item-27,
+.flex-item-37,
+.flex-item-47,
+.flex-item-57,
+.flex-item-67,
+.flex-item-77,
+.flex-item-87,
+.flex-item-97,
+.flex-item-107,
+.flex-item-117,
+.flex-item-127,
+.flex-item-137,
+.flex-item-147,
+.flex-item-157,
+.flex-item-167,
+.flex-item-177,
+.flex-item-12main13extra09,
+.flex-item-15main16extra07 {
+  background-color: #b92b27;
+}
+.flex-item-8,
+.flex-item-18,
+.flex-item-28,
+.flex-item-38,
+.flex-item-48,
+.flex-item-58,
+.flex-item-68,
+.flex-item-78,
+.flex-item-88,
+.flex-item-98,
+.flex-item-108,
+.flex-item-118,
+.flex-item-128,
+.flex-item-138,
+.flex-item-148,
+.flex-item-158,
+.flex-item-168,
+.flex-item-178,
+.flex-item-12main13extra07 {
+  background-color: #799f0c;
+}
+.flex-item-9,
+.flex-item-19,
+.flex-item-29,
+.flex-item-39,
+.flex-item-49,
+.flex-item-59,
+.flex-item-69,
+.flex-item-79,
+.flex-item-89,
+.flex-item-99,
+.flex-item-109,
+.flex-item-119,
+.flex-item-129,
+.flex-item-139,
+.flex-item-149,
+.flex-item-159,
+.flex-item-169,
+.flex-item-179 {
+  background-color: #ffa751;
+}
+.flex-item-70,
+.flex-item-12main13extra08,
+.flex-item-16main17extra01 {
+  background-color: rgb(153, 21, 153);
+}
+/* =================================================================== FIRST LAYOUT ======================================  */
+.flex-main1 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+
+  /* flexbox  */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+.flex-items1 {
+  flex: 1 0 calc(25% - 10px);
+  height: auto;
+  border: 2px solid rgb(111, 117, 122, 0.8);
+}
+/* .flex-main1:first-child{
+  flex-basis: 2;
+} */
+
+/* =================================================================== Second LAYOUT ======================================  */
+.flex-main2 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+  /* flexbox  */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+.flex-items2 {
+  flex: 1;
+  /* height: 150px; */
+  border: 2px solid rgb(111, 117, 122, 0.8);
+}
+.flex-items2:first-child,
+.flex-items2:last-child,
+.flex-items2:nth-of-type(2) {
+  flex-basis: 100%;
+}
+.flex-items2:nth-of-type(3) {
+  flex-basis: 70%;
+  display: flex;
+  flex-direction: column;
+}
+.flex-items2:nth-of-type(3) > div {
+  flex: 1;
+}
+.flex-items2:nth-of-type(4) {
+  height: 350px;
+  /* height: auto; */
+}
+/* =================================================================== Third LAYOUT ======================================  */
+.flex-main3 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+.flex-items3 {
+  flex: 1;
+  height: 100px;
+  border: 2px solid rgb(111, 117, 122, 0.8);
+}
+.flex-items3:first-child,
+.flex-items3:last-child,
+.flex-items3:nth-of-type(2) {
+  flex-basis: 100%;
+}
+.flex-items3:nth-of-type(4) {
+  flex-basis: 70%;
+}
+/* =================================================================== Fourth LAYOUT ======================================  */
+
+.flex-main4 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.flex-items4 {
+  box-sizing: border-box;
+  flex: 1;
+  /* flex: 1 0 calc(25%-1rem); */
+  /* margin: 1rem; */
+  /* add margin and then test again  */
+  height: 150px;
+  border: 2px solid rgb(111, 117, 122, 0.8);
+}
+
+.flex-items4:first-child,
+.flex-items4:last-child,
+.flex-items4:nth-of-type(2) {
+  flex-basis: 100%;
+  height: 80px;
+}
+
+.flex-items4:nth-of-type(3) {
+  flex-basis: 75%;
+}
+.flex-items4:nth-of-type(5) {
+  flex-basis: 31%;
+}
+.flex-items4:nth-of-type(6) {
+  flex-basis: 65%;
+}
+
+.flex-items4:nth-of-type(5),
+.flex-items4:nth-of-type(6) {
+  height: 400px;
+}
+.flex-items4:nth-of-type(7),
+.flex-items4:nth-of-type(8) {
+  height: 300px;
+}
+/* =================================================================== Fifth LAYOUT ======================================  */
+.flex-main5 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2rem;
+}
+.flex-items5 {
+  flex: 1;
+  /* or keep margin 1rem  */
+  border: 2px solid rgb(111, 117, 122, 0.8);
+}
+.flex-items5:first-child,
+.flex-items5:last-child {
+  flex-basis: 100%;
+}
+.flex-items5:nth-of-type(2) {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-items-42 {
+  height: 100px;
+}
+.flex-items-42:nth-of-type(2) {
+  height: 200px;
+}
+.flex-item-43 {
+  display: grid;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+}
+
+.flex-items-43 {
+  width: 100%;
+}
+
+.flex-items-43:nth-of-type(2),
+.flex-items-43:nth-of-type(3) {
+  color: #fcee30;
+}
+/* =================================================================== Sixth LAYOUT ======================================  */
+/* .flex-main6 {
+  width: 1200px;
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+} */
+/* =================================================================== Seventh LAYOUT ======================================  */
+.flex-main7 {
+  box-sizing: border-box;
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.flex-items7 {
+  flex: 1;
+  border: 2px solid rgb(111, 117, 122, 0.8);
+}
+.flex-items7:nth-of-type(2) {
+  flex-basis: 70%;
+}
+.flex-items7:nth-of-type(3),
+.flex-items7:last-child {
+  flex-basis: 100%;
+}
+.flex-items7:nth-of-type(5) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.flex-items-7mainextra01 {
+  box-sizing: border-box;
+  flex: 1;
+}
+.flex-items-7mainextra01:nth-of-type(2),
+.flex-items-7mainextra01:nth-of-type(3) {
+  flex-basis: 40%;
+  height: 150px;
+}
+.flex-items-7mainextra01:first-child,
+.flex-items-7mainextra01:last-child {
+  flex-basis: 100%;
+}
+/* =================================================================== Eight LAYOUT ======================================  */
+.flex-main8 {
+  /* width: 1200px; */
+  /* width: 100%; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+div.flex-items8 {
+  box-sizing: border-box;
+  flex: 1;
+}
+.flex-items8:first-child,
+.flex-items8:last-child {
+  flex-basis: 100%;
+}
+.flex-item-7main8extra01,
+.flex-item-7main8extra02 {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+.flex-item-7main8extra01 > div,
+.flex-item-7main8extra02 > div {
+  height: 100%;
+}
+/* =================================================================== Ninth LAYOUT ======================================  */
+.flex-main9 {
+  /* width: 100%; */
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+.flex-main9 > div {
+  height: 100px;
+}
+/* .flex-items9 div {
+  height: 100px;
+  margin: 1rem;
+} */
+.flex-items9:first-child,
+.flex-items9:nth-of-type(2),
+.flex-items9:nth-of-type(4) {
+  height: 100px;
+}
+.flex-item-83 {
+  height: 200px;
+}
+.flex-items9:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.flex-item-85 > div {
+  flex: 1;
+  height: 100%;
+}
+/* =================================================================== Tenth LAYOUT ======================================  */
+.flex-main10 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+.flex-items10 {
+  flex: 1;
+  height: 100px;
+}
+.flex-items10:first-child,
+.flex-items10:last-child,
+.flex-items10:nth-of-type(8) {
+  flex-basis: 100%;
+}
+
+.flex-items10:nth-of-type(3),
+.flex-items10:nth-of-type(4),
+.flex-items10:nth-of-type(7) {
+  flex-basis: 70%;
+}
+.flex-items10:nth-of-type(5) {
+  flex-basis: 25%;
+}
+/* =================================================================== Eleventh LAYOUT ======================================  */
+.flex-main11 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2rem;
+}
+.flex-items11 {
+  box-sizing: border-box;
+  height: 100px;
+}
+.flex-items11:first-child,
+.flex-items11:last-child {
+  flex-basis: 100%;
+}
+
+.flex-items11:nth-of-type(3),
+.flex-items11:nth-of-type(4),
+.flex-items11:nth-of-type(7) {
+  flex-basis: 70%;
+}
+
+.flex-items11:nth-of-type(2),
+.flex-items11:nth-of-type(5),
+.flex-items11:nth-of-type(6) {
+  flex-basis: 20%;
+}
+
+.flex-items11:nth-of-type(3),
+.flex-items11:nth-of-type(5),
+.flex-items11:nth-of-type(7) {
+  flex-grow: 1;
+}
+
+/* =================================================================== Twelveth LAYOUT ======================================  */
+.flex-main12 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2rem;
+}
+.flex-items12 {
+  height: 100px;
+}
+.flex-items12:first-child,
+.flex-items12:last-child,
+.flex-items12:nth-of-type(2),
+.flex-items12:nth-of-type(3) {
+  flex-basis: 100%;
+}
+.flex-items12:nth-of-type(3) {
+  height: 200px;
+}
+.flex-items12:nth-of-type(4),
+.flex-items12:nth-of-type(7) {
+  flex-basis: 65%;
+  height: 200px;
+}
+.flex-items12:nth-of-type(5) {
+  flex-basis: 30%;
+  margin-left: auto;
+  height: auto;
+}
+.flex-items12:nth-of-type(6) {
+  flex-basis: 30%;
+  margin-right: auto;
+  height: auto;
+}
+/* =================================================================== Thirteen LAYOUT ======================================  */
+.flex-main13 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+.flex-item-121 {
+  grid-column: 1 / span 4;
+}
+/* Grid layout for .flex-item-122  */
+.flex-item-122 {
+  grid-column: 1 / span 4;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  /* margin: 1rem; */
+  gap: 1rem;
+}
+.flex-item-12main13extra07 {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
+}
+.flex-item-12main13extra08 {
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 2;
+}
+.flex-item-12main13extra09 {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 4;
+}
+/* Grid layout for .flex-item-122  */
+
+.flex-item-12main13extra03 {
+  grid-column: 1 / span 2;
+  grid-row: 5/7;
+}
+.flex-item-12main13extra04 {
+  grid-column: 3 / span 2;
+  grid-row: 5/7;
+}
+.flex-item-12main13extra05 {
+  grid-column: 1 / span 2;
+  grid-row: 7/9;
+}
+.flex-item-12main13extra06 {
+  grid-column: 3 / span 2;
+  grid-row: 7/9;
+}
+.flex-item-129 {
+  grid-row: 9/10;
+  grid-column: 1 / span 4;
+}
+/* =================================================================== Fourteen LAYOUT ======================================  */
+.flex-main14 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  grid-auto-rows: 1fr;
+}
+.flex-item-131,
+.flex-item-132,
+.flex-item-135,
+.flex-item-138,
+.flex-item-139,
+.flex-item-13main14extra03 {
+  grid-column: 1 / span 2;
+}
+.flex-item-133,
+.flex-item-136 {
+  grid-column: 1 / span 1;
+  /* grid-row: 3/5; */
+}
+
+.flex-item-131 {
+  grid-row: 1/3;
+}
+.flex-item-133,
+.flex-item-134 {
+  grid-row: 4/6;
+}
+.flex-item-135 {
+  grid-row: 6/8;
+}
+.flex-item-138 {
+  grid-row: 10/12;
+}
+/* =================================================================== Fifteen LAYOUT ======================================  */
+.flex-main15 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(13, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  grid-auto-rows: 1fr;
+}
+.flex-item-141,
+.flex-item-144,
+.flex-item-14main15extra06,
+.flex-item-14main15extra05,
+.flex-item-14main15extra04 {
+  grid-column: 1 / span 4;
+}
+.flex-item-142 {
+  grid-column: 1 / span 2;
+}
+.flex-item-143 {
+  grid-column: 3 / span 2;
+}
+.flex-item-146,
+.flex-item-148,
+.flex-item-14main15extra01,
+.flex-item-14main15extra03 {
+  grid-column: 2 / span 3;
+}
+
+.flex-item-141 {
+  grid-row: 1 / span 2;
+}
+.flex-item-142,
+.flex-item-143 {
+  grid-row: 3 / span 2;
+}
+.flex-item-144 {
+  grid-row: 5 / span 2;
+}
+.flex-item-14main15extra04 {
+  grid-row: 11 / span 2;
+}
+/* =================================================================== Sixteen LAYOUT ======================================  */
+.flex-main16 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  grid-auto-rows: auto;
+}
+.flex-item-151,
+.flex-item-158,
+.flex-item-15main16extra06,
+.flex-item-15main16extra07 {
+  grid-column: 1 / -1;
+}
+
+.flex-item-152,
+.flex-item-156 {
+  grid-column: 1 / span 2;
+}
+.flex-item-153,
+.flex-item-157 {
+  grid-column: 3 / span 2;
+}
+.flex-item-154 {
+  grid-column: 1 / span 3;
+}
+.flex-item-14main15extra01,
+.flex-item-15main16extra03,
+.flex-item-15main16extra05 {
+  grid-column: 2 / span 3;
+}
+.flex-item-151 {
+  grid-row: 1 / span 2;
+}
+.flex-item-152,
+.flex-item-153 {
+  grid-row: 3 / span 3;
+}
+.flex-item-156,
+.flex-item-157 {
+  grid-row: 7 / span 2;
+}
+.flex-item-15main16extra06 {
+  grid-row: 13 / span 3;
+}
+/* =================================================================== Seventeen LAYOUT ======================================  */
+.flex-main17 {
+  /* width: 1200px; */
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin: 20rem 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2rem;
+}
+.flex-items17 {
+  height: 80px;
+}
+.flex-item-161,
+.flex-item-162,
+.flex-item-165,
+.flex-item-168,
+.flex-item-169 {
+  flex-basis: 100%;
+}
+
+.flex-item-163,
+.flex-item-166 {
+  flex-basis: 30%;
+}
+.flex-item-164,
+.flex-item-167,
+.flex-item-16main17extra01,
+.flex-item-16main17extra02 {
+  flex-grow: 1;
+}

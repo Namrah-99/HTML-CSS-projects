@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Merriweather+Sans:wght@700&family=Playfair+Display:wght@400;700&family=Roboto+Mono:wght@300;400;500&display=swap");
+:root {
+  --fs-main: 62.5%;
+  --fs-1: 1rem;
+  --fs-2: 1.5rem;
+  --fs-3: 2rem;
+  --fs-4: 3rem;
+
+  --fs-main: "Roboto Mono", monospace;
+  --fs-nav-1: "Merriweather Sans", sans-serif;
+  --fs-nav-2: "Josefin Sans", sans-serif;
+
+  --padding-li: 1rem;
+
+  --right-position-1: 25%;
+  --right-position-2: 80%;
+  --transform-translate-1: 100%;
+  --transform-translate-2: 0%;
+  --transform-translate-3: -100%;
+  --transform-translate-4: 75%;
+  --transform-translate-5: 20%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+li {
+  margin: 0;
+}
+
+html {
+  font-size: var(--fs-main);
+  font-family: var(--fs-main);
+  text-transform: capitalize;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a:not([class]) {
+  text-decoration: none;
+}
+/* --------------------------------------------------------------------------------------------------------------  */
+body {
+  background: linear-gradient(#c6ffdd, #fbd786, #f7797d);
+}
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+header img {
+  margin: 1rem;
+}
+
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.primary-navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: hsl(0 0% 0% / 0.5);
+}
+
+.primary-navigation a > [aria-hidden="true"] {
+  font-weight: 700;
+  margin-inline-end: 0.8rem;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+  /* if not supported in any browser, then it fallbacks to default value  */
+  .primary-navigation {
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(2rem);
+  }
+}
+
+/* small screens  */
+@media (max-width: 560px) {
+  .primary-navigation {
+    --gap: 2rem;
+
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2rem;
+
+    transform: translateX(100%);
+    transition: transform ease-out 250ms;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+
+    background-color: transparent;
+    background-image: url("images/hamburger.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1.7rem;
+
+    border: 0;
+
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  /* .show-nav { */
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+  }
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url("images/close.png");
+  }
+}
+
+@media (min-width: 560px) and (max-width: 768px) {
+  .primary-navigation a > span[aria-hidden] {
+    display: none;
+  }
+}
+
+@media (min-width: 560px) {
+  .primary-navigation {
+    --gap: clamp(1.5rem, 5vw, 3rem);
+    padding-block: 1rem;
+    padding-inline: clamp(2rem, 10vw, 8rem);
+  }
+}
+
+header {
+  padding-block: 0.5rem;
+}

@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap");
+
+:root {
+  --fs-main: 62.5%;
+  --fs-1: 1rem;
+  --fs-1: 1.5rem;
+  --fs-1: 2rem;
+  --fs-1: 3rem;
+
+  --fs-main: "Roboto Mono", monospace;
+
+  --padding-li: 1rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+Remove default margin html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+html {
+  font-size: var(--fs-main);
+  font-family: var(--fs-main);
+  text-transform: capitalize;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+Set core body defaults body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a:not([class]) {
+  text-decoration: none;
+}
+
+/* ---------------------------------- */
+
+header {
+  background-image: linear-gradient(to bottom right, #2b5876, #2193b0, #6dd5ed);
+  padding-inline: 1rem;
+}
+
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav ul {
+  float: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.img-float {
+  padding-block: 0.2rem;
+  float: left;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 2rem;
+  padding-top: 1.7rem;
+  position: relative;
+}
+
+nav a {
+  color: rgb(59, 57, 57);
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+nav a::before {
+  content: "";
+  height: 3px;
+  background-color: #000000;
+  display: block;
+
+  width: 0%;
+  position: absolute;
+  top: 0;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+/* ---------------------------------- */

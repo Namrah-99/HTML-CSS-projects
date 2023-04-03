@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Merriweather+Sans:wght@700&family=Playfair+Display:wght@400;700&family=Roboto+Mono:wght@300;400;500&display=swap");
+
+:root {
+  --fs-main: 62.5%;
+  --fs-1: 1rem;
+  --fs-2: 1.5rem;
+  --fs-3: 2rem;
+  --fs-4: 3rem;
+
+  --fs-main: "Roboto Mono", monospace;
+  --fs-nav-1: "Merriweather Sans", sans-serif;
+  --fs-nav-2: "Josefin Sans", sans-serif;
+
+  --padding-li: 1rem;
+
+  --right-position-1: 25%;
+  --right-position-2: 80%;
+  --transform-translate-1: 100%;
+  --transform-translate-2: 0%;
+  --transform-translate-3: -100%;
+  --transform-translate-4: 75%;
+  --transform-translate-5: 20%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+li {
+  margin: 0;
+}
+
+html {
+  font-size: var(--fs-main);
+  font-family: var(--fs-main);
+  text-transform: capitalize;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a:not([class]) {
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------------------------------------------  */
+/* Navbar Styling  */
+.menu-container {
+  position: relative;
+  text-align: center;
+}
+
+.menu-container li {
+  display: inline-block;
+}
+
+.menu-container a {
+  padding: 0.75rem 1.75rem;
+  display: block;
+  color: black;
+  font-weight: 600;
+}
+
+.menu-sub {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: none;
+  padding: 1rem;
+}
+
+.menu-container li:hover .menu-sub {
+  display: block;
+}
+
+.menu-sub li {
+  display: block;
+}
+
+.menu-category {
+  color: #fff;
+  padding-bottom: 1.5rem;
+
+  text-decoration: underline rgb(228, 49, 49) 2px;
+  padding-bottom: 0.8rem;
+  text-underline-offset: 5px;
+}
+
+.menu-col-1,
+.menu-col-2,
+.menu-col-3,
+.menu-col-4 {
+  max-height: 50vh;
+  overflow-y: auto;
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+  place-items: center;
+}
+
+.menu-col-1 div,
+.menu-col-2 div,
+.menu-col-3 div,
+.menu-col-4 div {
+  align-self: flex-start;
+}
+
+nav li:hover {
+  background: #444;
+}
+
+nav li:hover a {
+  color: #fff;
+}
+.menu-sub {
+  background: #444;
+}
+
+.menu-sub a {
+  padding: 0;
+}
+
+/* --------------------------------------------------------------------------------------------------------------  */

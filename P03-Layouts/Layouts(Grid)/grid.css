@@ -1,0 +1,385 @@
+/* ================================================================================================================== */
+/* GRID UNDERSTANDING  */
+/* ================================================================================================================== */
+
+/* assigns names to the cells using the grid-template-areas property  */
+/* .grid {
+  display: grid;
+  grid:
+    "header header header" 100px
+    "sidebar main main" auto
+    "footer footer footer" 50px / 1fr 2fr 1fr;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Roboto Mono", monospace;
+}
+body {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+}
+
+.items1,
+.items2,
+.items3,
+.items4,
+.items5,
+.items6,
+.items7 {
+  font-size: 2rem;
+}
+.item-1,
+.item-10,
+.item-11,
+.item-21,
+.item-31,
+.item-41,
+.item-51,
+.item-61 {
+  background-color: #26a0da;
+}
+.item-2,
+.item-12,
+.item-22,
+.item-32,
+.item-42,
+.item-52,
+.item-62 {
+  background-color: #f9d423;
+}
+.item-3,
+.item-13,
+.item-23,
+.item-33,
+.item-43,
+.item-53,
+.item-63 {
+  background-color: #cc2b5e;
+}
+.item-4,
+.item-14,
+.item-24,
+.item-34,
+.item-44,
+.item-54,
+.item-64 {
+  background-color: #a5cc82;
+}
+.item-5,
+.item-15,
+.item-25,
+.item-35,
+.item-45,
+.item-55,
+.item-65 {
+  background-color: #b79891;
+}
+.item-6,
+.item-16,
+.item-26,
+.item-36,
+.item-46,
+.item-56,
+.item-66 {
+  background-color: #86fde8;
+}
+.item-7,
+.item-17,
+.item-27,
+.item-37,
+.item-47,
+.item-57,
+.item-67 {
+  background-color: #b92b27;
+}
+.item-8,
+.item-18,
+.item-28,
+.item-38,
+.item-48,
+.item-58,
+.item-68 {
+  background-color: #799f0c;
+}
+.item-9,
+.item-19,
+.item-29,
+.item-39,
+.item-49,
+.item-59,
+.item-69 {
+  background-color: #ffa751;
+}
+
+/* =================================================================== FIRST LAYOUT ======================================  */
+.main1 {
+  width: 1200px;
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin-block: 20rem;
+
+  /* grid  */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 1fr;
+  /* grid-template-columns: 1fr 2fr 3fr; */
+  grid-template-rows: repeat(3, 200px);
+  /* column-gap: 30px; */
+  /* row-gap: 30px; */
+  gap: 2rem;
+
+  grid-auto-flow: row;
+  grid-auto-rows: 200px;
+  grid-auto-columns: 1fr;
+  padding: 2rem;
+}
+
+.item-1 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  /* grid-column: 3 / 4;  */
+  /* shorthand */
+}
+.item-2 {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+.item-3 {
+  /* grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2; */
+  /* <--- shorthand ---> */
+  grid-area: 1/1/2/2;
+}
+.item-4 {
+  grid-row: 3 / 4;
+  grid-column: 1 / -1;
+}
+
+/* =================================================================== SECOND LAYOUT ======================================  */
+.main2 {
+  width: 1200px;
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin-block: 20rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: 1fr 2fr 3fr; */
+  grid-template-rows: repeat(4, 200px);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.item-11 {
+  grid-row: 1/2;
+  grid-column: 1/-1;
+}
+
+.item-12 {
+  grid-row: 2/4;
+  grid-column: 1/2;
+}
+
+.item-16 {
+  grid-column: 2/-1;
+}
+
+.item-17 {
+  grid-column: 1/-1;
+}
+
+/* ====================================== THIRD LAYOUT (Implicit and Explicit Grid) ======================================  */
+.main3 {
+  width: 1200px;
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin-block: 20rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 200px);
+  gap: 2rem;
+  padding: 2rem;
+  /* IMPLICIT GRID */
+  /* grid-auto-flow: row; */
+  grid-auto-flow: column;
+  grid-auto-rows: 200px;
+  grid-auto-columns: 1fr;
+}
+
+.item-25 {
+  grid-row: 2/3;
+  grid-column: 1/-1;
+}
+
+.item-26 {
+  grid-row: 3/4;
+  grid-column: 1/-1;
+}
+
+.item-29 {
+  grid-row: 1/4;
+}
+
+/* ===================================================== FOURTH LAYOUT =================================================  */
+/*                       (Justify-content vs Justify-self vs Justify-items, Align-content vs Align-self vs Align-items)   */
+
+/* How to center a div inside another div  */
+/* How to center a text inside another element  */
+
+.main4 {
+  width: 1200px;
+  height: 500px;
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin-block-end: 20rem;
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 150px);
+  /* justify-content: space-evenly;  */
+  /* start | end | center | space-around | space-evenly*/
+  /* align-content: space-evenly; */
+  /* start | end | center */
+  /* justify-items: center;
+  align-items: center; */
+  justify-content: center;
+  align-content: center;
+  place-content: center;
+  gap: 2rem;
+}
+.items4 {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.item-31 {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.item-32 {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.item-34 {
+  display: grid;
+  justify-content: end;
+  align-content: start;
+}
+.item-35 {
+  display: grid;
+  justify-self: center;
+  align-self: center;
+}
+.item-36 {
+  display: grid;
+  justify-self: end;
+  align-self: start;
+}
+
+/* ===================================================== FIFTH LAYOUT =================================================  */
+/*                                      (MIN-CONTENT vs MAX-CONTENT vs MINMAX())                                        */
+.main5 {
+  width: 1200px;
+  height: 500px;
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+
+  display: grid;
+  /* grid-template-columns: repeat(2, 200px) 1fr; */
+  /* grid-template-columns: repeat(2, 200px) max-content; */
+  /* grid-template-columns: repeat(2, 200px) min-content; */
+  /* grid-template-columns: repeat(2, 200px) minmax(200px, min-content); */
+  grid-template-columns: repeat(2, 200px) minmax(200px, 400px);
+  /* grid-template-rows: repeat(2, 150px); */
+  grid-template-rows: repeat(2, minmax(min-content, 150px));
+  justify-content: center;
+  align-content: center;
+  place-content: center;
+  gap: 2rem;
+}
+
+/* ===================================================== SIXTH LAYOUT =================================================  */
+/*                                                  (AUTO-FILL VS AUTO-FIT)                                             */
+/* auto-fill fills row with as many columns as it can fill. */
+/* auto-fit fits currently available columns into the space by expanding them */
+.main6 {
+  width: 90vw;
+  /* height: 100vh; */
+  background-color: #758d9c;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin-block: 20rem;
+  display: grid;
+  /* grid-template-columns: repeat(4, minmax(250px, 1fr)); */
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(2, minmax(250px, 1fr)); */
+  /* place-items: center; */
+  /* padding: 100px 0; */
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  grid-template-rows: repeat(2, minmax(250px, 1fr));
+  column-gap: 10px;
+}
+
+.items6 img {
+  width: 100%;
+  display: inline-block;
+}
+/* .item-53 {
+    in case of auto-fill
+  grid-column: 4/-1;
+} */
+
+@media (max-width: 1180px) {
+  .main6 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* ===================================================== SEVENTH LAYOUT =================================================  */
+/*                                                  (Layout Practice)                                             */
+
+.main7 {
+  width: 1200px;
+  background-color: #314755;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  margin-block: 20rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  grid-template-rows: repeat(5, minmax(150px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+.item-61 {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+.item-65 {
+  grid-column: 4/5;
+  grid-row: 2/5;
+}
+.item-66 {
+  grid-column: 1/4;
+  grid-row: 3/5;
+}
+.item-67 {
+  grid-column: 1/-1;
+  grid-row: 5/6;
+}
+
+/* ================================================================================================================== */

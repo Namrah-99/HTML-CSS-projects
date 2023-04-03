@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="Logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <title>Underutilized HTML Elements </title>
+  </head>
+  <body>
+    <main>
+      <section class="section-1 section-01">
+        <h1>01 Datalist</h1>
+        <div>
+          <form action="">
+            <div class="flex-space-between">
+            <label for="food-item">what is your favourite food item?</label>
+            <input id="food-item" type="text" placeholder="food ..." list="foods" />
+            </div>
+            <datalist id="foods">
+              <option value="Pizza"></option>
+              <option value="Burger"></option>
+              <option value="Taco"></option>
+              <option value="Sushi"></option>
+              <option value="Salad"></option>
+              <option value="Fried Chicken"></option>
+              <option value="Pasta"></option>
+              <option value="Ramen"></option>
+              <option value="Steak"></option>
+              <option value="Fish and Chips"></option>
+            </datalist>
+            <br/>
+            <label for="scale"
+              >On a scale of 1-10, how much do you like fried chicken?</label
+            >
+            <br/>
+            <input
+              class="slide-section-01"
+              id="scale"
+              type="range"
+              min="1"
+              max="10"
+              placeholder="scale"
+              list="preference-scale"
+            />
+            <datalist id="preference-scale">
+              <option value="0">0</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <option value="40">40</option>
+              <option value="50">50</option>
+              <option value="60">60</option>
+              <option value="70">70</option>
+              <option value="80">80</option>
+              <option value="90">90</option>
+              <option value="100">100</option>
+            </datalist>
+            <br/>
+            <div class="flex-space-between">
+               <label for="date">when would you like to eat fried chicken?</label>
+            <input id="date" type="date" list="date-list" />
+            </div>
+           
+            <datalist id="date-list">
+              <option value="2023-02-12"></option>
+              <option value="2023-03-03"></option>
+              <option value="2023-04-16"></option>
+              <option value="2023-05-26"></option>
+              <option value="2023-06-18"></option>
+            </datalist>
+          </form>
+        </div>
+      </section>
+      <section class="section-1 section-02">
+        <h1>02 Modal</h1> 
+        <div>
+          <button class="button open-modal">Open Modal</button>
+          <dialog class="modal" id="modal" class="center">
+            <div>
+              <div class="flex-space-between">
+                <h1>Hello!</h1>
+                <button class="button close-modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+              </div>
+              <form action="" method="dialog">
+                <div class="flex-space-between">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" placeholder="name" />
+                </div>
+                <div class="flex-space-between">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" placeholder="email" />
+                </div>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </dialog>
+        </div>
+      </section>
+      <section class="section-1 section-03">
+        <h1>section-03 </h1> 
+        <h4>base URL</h4>
+        <div> 
+          <p>Specify a default URL and a default target for all links on a page</p>
+          <!-- <a href="https://www.google.com/">Google (absolute url)</a> -->
+          <!-- relative url (base is used for relative paths as prefix) -->
+          <!-- <img src="Logo.png" alt="img"> -->
+          <!-- uncomment above base tag in <head> --></div>
+      </section>
+      <section class="section-1 section-04">
+        <h1>section-04</h1> 
+        <div><h4>time and datetime</h4>
+          <p>Open from <time>10:00</time> to <time>21:00</time> every weekday.</p>
+          <p>I have my birthday on <time datetime="2023-03-08 20:00">Women's day</time>.</p></div>
+      </section>
+      <section class="section-1 section-05">
+        <h1>section-05</h1>
+        <br/>
+        <h4>fieldset and legend elements</h4>
+        <form action="" class="center">
+            <div>
+              <fieldset>
+                <legend>computer specs</legend>
+                <div class="flex-space-between">
+                  <label for="cpu">CPU</label>
+                  <input type="text" id="cpu">
+                </div>
+                <br>
+                <div class="flex-space-between">
+                  <label for="gpu">GPU</label>
+                  <input type="text" id="gpu">
+                </div>
+              </fieldset>
+              <br/>
+              <fieldset >
+                <legend>favorite genre of game</legend>
+                <div class="flex-space-between column">
+                  <div>
+                    <input type="radio" id="rpg">
+                    <label for="rpg">RPG</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="fps">
+                    <label for="fps">First-person shooter</label>
+                  </div>
+                  <div> 
+                    <input type="radio" id="simulation">
+                    <label for="sim">Simulation</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <br/>
+            <button type="submit">submit</button>
+        </form>
+        <br/>
+        <h4>output element</h4>
+        <form action="" >
+             <br>
+          <div> <label>Value one <input type="number" id="val-one"></label></div>
+       <br>
+          <div> <label>Value two <input type="number" id="val-two"></label></div>
+          <br>
+          <div><label>Value one + value two = <output for="val-one value-two"></output></label></div>
+        </form>
+      </section>
+      <section class="section-1 section-06">
+        <h1>section-06</h1> 
+        <div>
+          <h4>strikeThrough element</h4>
+          <p>Purchase today for <s>$39.99</s> <b>$19.99!</b>
+          </p>
+          <h4>The <code>del</code> and <code>ins</code> elements</h4>
+          <p>
+            While strikethrough is used to show information that is no longer
+            relevant, while the default styling is the same, we use the
+            <dfn>deleted text element</dfn> to show text that has been deleted from
+            a document.
+          </p>
+          <ul>
+            <li><del>Create codepen</del></li>
+            <li>Record video</li>
+            <li>Edit video</li>
+            <li>Publish video</li>
+          </ul>
+          <h4>wbr or html entities</h4>
+          <p style="font-size: 4rem;">A heading with a particu&shy;larly long word can cause issues</p>
+          <p>That said, being so manual, using <code>&ampshy;</code> might be a better choice, if you want hyphenation.</p>
+         
+          <h4>mark element</h4>
+          <p>Lorem, ipsum dolor sit <mark>amet consectetur adipisicing</mark> elit. Doloremque, a?</p>
+          
+          <h4>abbr element</h4>
+          <p>
+            <dfn>
+              <abbr title="Cascade Styling Sheet">CSS</abbr>
+            </dfn> is a language to style your website </p>
+        </div> 
+      </section>
+      <section class="section-1 section-07">
+        <h1>section-07</h1> 
+        <div aria-labelledby="section-header">
+          <div>
+            <header id="section-header">
+              <h1>Hello World!</h1>
+              <p>Lorem ipsum dolor sit.</p>
+            </header>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet ea quisquam pariatur, nemo aliquam ad! Porro unde necessitatibus repellat ab!</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js" type="application/javascript"></script>
+  </body>
+</html>
+
+<!-- Explanation (Typing suggestions - datalist)
+    - Typing Suggestions
+    - Datalist HTML element 
+    - Autofill Stuff for user 
+    - see a dropdown inside an input (styling comes with datalist) 
+    Steps: 
+        - Setting up datalist
+        - Connecting a datalist to input 
+        - datalist with range inputs
+        - data suggestions with datalist
+    - you can have same datalist for 2 inputs 
+    - firefox browser does not show the little notches that you see below the range slider  
+-->
+
+<!-- Explanation: (popup Modal - dialog)
+    - Modal using native HTML element <dialog>
+    - Browser support not perfect for this
+    - Donot toggle it manually
+    - built in document.querSelctor(".open-modal").showModal() which lets you open dialog on button click event
+    - By pressing Esc, it automatically gets close
+    - built-in document.querSelctor(".close-modal").close()
+    - with <form> method='dialog', on submitting form, modal gets close
+    - you can use ::backdrop pseudo element for styling dialog modal backdrop
+    - use max-width: 50ch; to little bit constrain things (as for large text, it takes full width which doesn't looks good)
+    - width and border default styling can be changed
+-->
+
+<!-- Explanation: (html elements that no one uses)
+    - strikeThrough element (<s>)
+            (nolonger relevant - not relevant info anymore for that prupose we use it)
+            for keyboard or screen reader accessibility reasons, its important
+    - del and ins element (<del> and <ins>)
+    - line break opportunity element (<wbr>) 
+            - that's manual and not adds hyphen when breaks a word
+            - alternative solution is to use &shy;  it adds hyphen and reaks the word as well
+            - also can do using CSS hyphen auto
+    - fieldset and legend elements
+            - fieldset - provide groups with any form
+            - legend - provides a label for the entire group
+            - fieldset can also have attribute form which links it to a form
+    - base element
+    - also see <code> , <dfn> 
+    - mark element (emphasis to something)
+    - time element (defines specific time) it has an attribute datetime (good to use in terms website SEO)
+    - output element (shows output from various inputs)
+    - abbr element (use for abbreviation in your text like CSS, HTML)
+    - dfn (mark a term that is being defined in the current sentence) italic style
+    - template (hold some content that will be hidden when the page loads)
+
+-->

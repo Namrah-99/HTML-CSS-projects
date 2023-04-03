@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap");
+
+:root {
+  --fs-main: 62.5%;
+  --fs-1: 1rem;
+  --fs-2: 1.5rem;
+  --fs-3: 2rem;
+  --fs-4: 3rem;
+
+  --fs-main: "Roboto Mono", monospace;
+
+  --padding-li: 1rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+li {
+  margin: 0;
+}
+
+html {
+  font-size: var(--fs-main);
+  font-family: var(--fs-main);
+  text-transform: capitalize;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a:not([class]) {
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------------------------------  */
+
+.nav-toggle,
+.fab {
+  border: none;
+  font-size: x-large;
+}
+
+#content-4 ul {
+  list-style-type: none;
+}
+
+#content-4 a {
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
+
+nav,
+.nav-toggle {
+  background-color: #a2d9ff;
+  padding-inline: 1rem;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: clamp(1rem, 1rem + 6vw, 3rem);
+  padding: 0.5rem;
+}
+
+.links a {
+  text-transform: capitalize;
+  display: block;
+  transition: var(--transition);
+}
+
+/* .links a:hover {
+  background: var(--clr-primary-8);
+  color: var(--clr-primary-5);
+  padding-left: 1.5rem;
+} */
+.social-icons {
+  display: none;
+}
+
+.links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.show-links {
+  height: auto;
+}
+
+/* for bigger screens */
+@media screen and (min-width: 800px) {
+  nav {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .links {
+    height: auto; /* a hack for such navbars with toggle button functionality */
+    display: flex;
+  }
+  .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+  .social-icons {
+    display: flex;
+  }
+  .social-icons a {
+    margin: 0 0.5rem;
+    color: black;
+    transition: all 0.3s linear;
+  }
+  .social-icons a:hover {
+    color: hsl(205, 90%, 76%);
+  }
+}
